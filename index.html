@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cnochur's Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header id="home">
+        <h1>Cnochur Saunders</h1>
+        <nav>
+          <ul>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!---->
+      <section id="welcome">
+        <img id="banner" src=./github-header-image.png alt="GitHub profile
+        banner" />
+        <p>
+          Cybersecurity enthusiast transitioning from a 15-year career in
+          hospitality, currently pursuing a Foundation Degree in Cybersecurity
+          (September 2024). Actively seeking entry-level opportunities to
+          leverage my diverse skill set, including strong communication,
+          problem-solving, and leadership abilities, to protect digital assets
+          and enhance organizational security.
+        </p>
+        <p>
+          <a href="https://skillicons.dev">
+            <img
+              src="https://skillicons.dev/icons?i=git,bash,css,github,html,kali,linux,obsidian,py,ubuntu,vscode"
+            />
+          </a>
+        </p>
+      </section>
+
+      <section id="github-repos">
+        <h2>My GitHub Repositories</h2>
+        <div class="repo-container" id="repo-container"></div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+
+      <footer>
+        <p>© 2024</p>
+      </footer>
+    </div>
+  </body>
+</html>
