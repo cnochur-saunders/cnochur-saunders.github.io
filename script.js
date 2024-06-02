@@ -18,7 +18,7 @@ function fetchConfigAndFetchRepos(username) {
 function fetchRepos(username, apiKey) {
   const repoContainer = document.getElementById("repo-container");
   fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=3`,
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=3`, // Fetch only 3 repositories
     {
       headers: {
         Authorization: `token ${apiKey}`,
@@ -27,10 +27,9 @@ function fetchRepos(username, apiKey) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data); // Log the response to inspect its structure
-
       if (Array.isArray(data)) {
-        data.forEach((repo) => {
+        const latestRepos = data.slice(0, 3); // Get the latest 3 repositories
+        latestRepos.forEach((repo) => {
           const repoElement = document.createElement("div");
           repoElement.classList.add("repo");
           repoElement.innerHTML = `
@@ -46,6 +45,7 @@ function fetchRepos(username, apiKey) {
     })
     .catch((error) => console.error("Error fetching repositories:", error));
 }
+
 
 // Highlight active link in navigation
 const links = document.querySelectorAll("nav ul li a");
