@@ -27,16 +27,22 @@ function fetchRepos(username, apiKey) {
   )
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((repo) => {
-        const repoElement = document.createElement("div");
-        repoElement.classList.add("repo");
-        repoElement.innerHTML = `
-                  <h3>${repo.name}</h3>
-                  <p>${repo.description || "No description available."}</p>
-                  <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-              `;
-        repoContainer.appendChild(repoElement);
-      });
+      console.log(data); // Log the response to inspect its structure
+
+      if (Array.isArray(data)) {
+        data.forEach((repo) => {
+          const repoElement = document.createElement("div");
+          repoElement.classList.add("repo");
+          repoElement.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description available."}</p>
+            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+          `;
+          repoContainer.appendChild(repoElement);
+        });
+      } else {
+        console.error("Unexpected response structure:", data);
+      }
     })
     .catch((error) => console.error("Error fetching repositories:", error));
 }
