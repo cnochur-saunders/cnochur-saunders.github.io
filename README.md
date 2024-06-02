@@ -25,7 +25,7 @@ Features
 Development Journey
 Design and Layout
 
-The project began with designing wireframes and mockups to visualize the website's structure and layout. This involved selecting color schemes, fonts, and visual elements to create a cohesive and visually appealing design.
+The project involved selecting color schemes, fonts, and visual elements to create a cohesive and visually appealing design.
 Frontend Development
 
 Frontend development focused on implementing the website's layout using HTML, CSS, and JavaScript. This included creating responsive web pages, styling elements, and adding interactive features to enhance user experience.
@@ -48,6 +48,11 @@ Conclusion
 
 The Portfolio Project provides a valuable opportunity to showcase your skills, experiences, and projects in a professional and visually appealing manner. Whether you're a freelancer, job seeker, or entrepreneur, having a well-designed portfolio website can make a significant difference in your online presence and career opportunities.
 License
+
+Still to do:
+- Implement the getrepos function securely to display latest 3 github repos
+- Enable the contact form
+- Add more styling (h1, bkgr ... etc.)
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 Acknowledgements
