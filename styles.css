@@ -120,6 +120,7 @@ footer {
 /*github repos*/
 
 /* Carousel styles */
+/* Carousel styles */
 .carousel-container {
   position: relative;
   width: 80%;
@@ -159,7 +160,7 @@ footer {
 }
 
 .card {
-  min-width: 300px;
+  width: 300px;
   margin: 0 10px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -182,11 +183,7 @@ footer {
 
 .card-details {
   padding: 10px;
-  display: none;
-}
-
-.card-details.visible {
-  display: block;
+  display: block; /* Ensure details are always visible */
 }
 
 /* Button styles */
