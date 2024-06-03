@@ -19,7 +19,6 @@
         </nav>
       </header>
 
-      <!---->
       <section id="welcome">
         <img id="banner" src=./github-header-image.png alt="GitHub profile
         banner" />
@@ -42,7 +41,17 @@
 
       <section id="github-repos">
         <h2>My GitHub Repositories</h2>
-        <div class="repo-container" id="repo-container"></div>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-track-container">
+              <ul class="carousel-track">
+                <!-- Project cards will be dynamically inserted here -->
+              </ul>
+            </div>
+            <button class="carousel-button left-button">←</button>
+            <button class="carousel-button right-button">→</button>
+          </div>
+        </div>
       </section>
 
       <section id="contact">
