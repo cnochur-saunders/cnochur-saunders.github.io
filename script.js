@@ -15,37 +15,58 @@ function fetchConfigAndFetchRepos(username) {
     );
 }
 
-function fetchRepos(username, apiKey) {
-  const repoContainer = document.getElementById("repo-container");
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselTrack = document.querySelector(".carousel-track");
+  const leftButton = document.querySelector(".left-button");
+  const rightButton = document.querySelector(".right-button");
+  let currentIndex = 0;
+
+  // Fetch latest 3 GitHub repos
   fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=3`, // Fetch only 3 repositories
-    {
-      headers: {
-        Authorization: `token ${apiKey}`,
-      },
-    }
+    "https://api.github.com/users/cnochur-saunders/repos?sort=updated&per_page=3"
   )
     .then((response) => response.json())
-    .then((data) => {
-      if (Array.isArray(data)) {
-        const latestRepos = data.slice(0, 3); // Get the latest 3 repositories
-        latestRepos.forEach((repo) => {
-          const repoElement = document.createElement("div");
-          repoElement.classList.add("repo");
-          repoElement.innerHTML = `
-            <h3>${repo.name}</h3>
-            <p>${repo.description || "No description available."}</p>
-            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-          `;
-          repoContainer.appendChild(repoElement);
-        });
-      } else {
-        console.error("Unexpected response structure:", data);
-      }
-    })
-    .catch((error) => console.error("Error fetching repositories:", error));
-}
+    .then((repos) => {
+      repos.forEach((repo) => {
+        const card = document.createElement("li");
+        card.classList.add("card");
 
+        card.innerHTML = `
+                  <img src="https://via.placeholder.com/300" alt="Project Image">
+                  <h3>${repo.name}</h3>
+                  <div class="card-details">
+                      <p>${repo.description}</p>
+                      <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+                  </div>
+              `;
+
+        card.addEventListener("click", () => {
+          const details = card.querySelector(".card-details");
+          details.classList.toggle("visible");
+        });
+
+        carouselTrack.appendChild(card);
+      });
+    });
+
+  leftButton.addEventListener("click", () => {
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    updateCarousel();
+  });
+
+  rightButton.addEventListener("click", () => {
+    currentIndex = currentIndex < 2 ? currentIndex + 1 : 2;
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    const trackWidth = carouselTrack.clientWidth;
+    const cardWidth = trackWidth / 3;
+    carouselTrack.style.transform = `translateX(-${
+      currentIndex * cardWidth
+    }px)`;
+  }
+});
 
 // Highlight active link in navigation
 const links = document.querySelectorAll("nav ul li a");
