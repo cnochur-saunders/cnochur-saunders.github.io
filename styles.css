@@ -119,62 +119,74 @@ footer {
 
 /*github repos*/
 
-#github-repos {
-  background-color: #000c1f;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
+/* Carousel styles */
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
-#github-repos h2 {
-  text-align: center;
-  color: #7716d9;
-  margin-bottom: 20px;
-}
-
-.repo-container {
+.carousel-track-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.repo {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
-  background-color: #000c1f;
-  border: 1px solid #7716d9;
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;
+  padding: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.left-button {
+  left: 0;
+}
+
+.right-button {
+  right: 0;
+}
+
+.card {
+  min-width: 300px;
+  margin: 0 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
-.repo:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+.card img {
+  width: 100%;
+  height: auto;
 }
 
-.repo h3 {
-  margin-top: 0;
-  color: #7716d9;
+.card h3 {
+  padding: 10px;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
-.repo p {
-  color: #666;
-  margin: 10px 0;
+.card-details {
+  padding: 10px;
+  display: none;
 }
 
-.repo a {
-  display: inline-block;
-  background: #000c1f;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.repo a:hover {
-  background: #7716d9;
+.card-details.visible {
+  display: block;
 }
 
 /* Button styles */
