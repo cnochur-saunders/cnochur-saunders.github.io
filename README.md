@@ -1,9 +1,6 @@
 # portfolio
 Web page design for my portfolio
 
-Introduction
-
-Welcome to the Portfolio Project, a web development project aimed at showcasing personal or professional achievements, skills, and projects. This README provides an overview of the Portfolio Project, its objectives, development process, and usage instructions.
 Project Goals
 
     Create a visually appealing and user-friendly portfolio website.
@@ -14,13 +11,10 @@ Project Goals
 
 Project Overview
 
-The Portfolio Project serves as a platform to showcase your skills, experiences, and projects to potential employers, clients, or collaborators. Whether you're a developer, designer, writer, or any other professional, having a well-designed and informative portfolio website can greatly enhance your online presence and credibility.
-Features
-
-    Home Page: Introduce yourself and provide an overview of your portfolio.
-    About: Share your background, skills, interests, and career objectives.
+    Home Page: Introdution and an overview of my portfolio.
+    About: Background, skills, interests, and career objectives.
     Repo showcase: Showcase your projects with descriptions, screenshots, and links.
-    Contact Form: Enable visitors to reach out to you via a contact form or email.
+    Contact Form: Enable visitors to reach out via a contact form.
 
 Development Journey
 Design and Layout
@@ -37,20 +31,14 @@ Deployment and Hosting
 The final step was deploying the portfolio website and hosting it using GitHub Pages or other hosting services. This involved configuring domain settings, setting up SSL certificates for secure connections, and optimizing performance for fast loading times.
 Usage
 
-To use the Portfolio Project:
-
-    Clone the project repository to your local machine.
-    Customize the content, styles, and layout to fit your personal or professional needs.
-    Test the website across different devices and browsers to ensure compatibility and responsiveness.
-    Deploy the website to a hosting service like GitHub Pages or your preferred hosting provider.
-
 Conclusion
 
 The Portfolio Project provides a valuable opportunity to showcase your skills, experiences, and projects in a professional and visually appealing manner. Whether you're a freelancer, job seeker, or entrepreneur, having a well-designed portfolio website can make a significant difference in your online presence and career opportunities.
 License
 
 Still to do:
-- Implement the getrepos function securely to display latest 3 github repos
+
+- Implement the getrepos function securely to display latest 3 github repos / projects?
 - Enable the contact form
 - Add more styling (h1, bkgr ... etc.)
 
